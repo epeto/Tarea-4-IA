@@ -14,5 +14,5 @@ An Overview of Deep Learning in Industry (https://www-taylorfrancis-com.pbidi.un
 
 Integrantes del equipo:
 - Emmanuel Peto Gutiérrez
-- Sofía
+- Sofía Magdalena Borrel Miller
 
