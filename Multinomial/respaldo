@@ -1,0 +1,22 @@
+"""### Por descomposición QR
+¿Qué pasa cuando expandimos el polinomio en grado 20? La solución de mínimos cuadrados se vuelve numéricamente inestable. 
+
+Afortunadamente, podemos calcular esta solución de una forma más estable usando la descomposición QR y evitando realizar el cómputo de $(\mathbf{X}^\top \mathbf{X})^{-1}$. 
+
+$$
+\mathbf{X} = \mathbf{Q} \mathbf{R}, \text{ donde } \mathbf{Q}^\top \mathbf{Q} =  \mathbf{Q} \mathbf{Q}^\top = \mathbf{I}
+$$
+
+Substituyendo en la solución de mínimos cuadrados y aplicando propiedades de transpuestas e inversas
+
+$$
+\begin{align}
+\boldsymbol{\theta}_{EMV} = & \left[\underbrace{(\mathbf{Q} \mathbf{R})^\top}_{\mathbf{R}^\top \mathbf{Q}^\top} (\mathbf{Q}\mathbf{R})\right]^{-1} \underbrace{(\mathbf{Q} \mathbf{R})^\top}_{\mathbf{R}^\top \mathbf{Q}^\top} \mathbf{y} \\ 
+= & \left[\mathbf{R}^\top \underbrace{\mathbf{Q}^\top \mathbf{Q}}_{\mathbf{I}} \mathbf{R}\right]^{-1} \mathbf{R}^\top \mathbf{Q}^\top \mathbf{y} \\
+= & \underbrace{\left[\mathbf{R}^\top \mathbf{R}\right]^{-1}}_{\mathbf{R}^{-1} \mathbf{R}^{-\top}} \mathbf{R}^\top \mathbf{Q}^\top \mathbf{y} \\
+= & \mathbf{R}^{-1} \underbrace{\mathbf{R}^{-\top} \mathbf{R}^\top}_{\mathbf{I}} \mathbf{Q}^\top \mathbf{y} \\
+= & \mathbf{R}^{-1} \mathbf{Q}^\top \mathbf{y} 
+\end{align}
+$$
+"""
+

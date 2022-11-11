@@ -5,8 +5,8 @@ import sympy as sym
 from pybigparser import evaluator
 
 ## construye el vector gradiente.
-# @param f función simbólica (construida con sympy).
-# @param simbolos tupla de símbolos (variables de la función).
+# @param f: función simbólica (construida con sympy).
+# @param simbolos: tupla de símbolos (variables de la función).
 def construyeGradiente(f, simbolos):
     gradSym = []
     for i in range(len(simbolos)):
@@ -31,6 +31,8 @@ def gradienteDescendente(gradiente, variables, alfa, iteraciones):
         grad2.append(parser)
     for i in range(len(variables)):
         vector.append(random.randint(-500, 500))
+    # se imprime el vector para ver el punto inicial
+    print("Punto inicial:", vector)
     for i in range(iteraciones):
         vectorNuevo = []
         for subFuncion in grad2:
